@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Add Administrator</title>
 </head>
 <body>
-$END$
+<div>
+  <h2>Add Administrator</h2>
+    <form action="{% url 'add-administrator' %}" method="POST">
+        {% csrf_token %}
+        <input name="first_name" type="text" placeholder="first_name">
+        <input name="last_name" type="text" placeholder="last_name">
+        <input name="email" type="text" placeholder="email">
+        <button type="submit" > Add </button>
+    </form>
+</div>
 </body>
 </html>
