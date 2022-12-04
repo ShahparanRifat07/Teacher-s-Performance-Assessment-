@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
 </head>
 <body>
-$END$
+<div>
+    <h2>Add Student</h2>
+
+    <form action="{% url 'add-student' %}" method="POST">
+        {% csrf_token %}
+        <input name="student_id" type="text" placeholder="student_id">
+        <input name="first_name" type="text" placeholder="first_name">
+        <input name="last_name" type="text" placeholder="last_name">
+        <input name="email" type="text" placeholder="email">
+        <input type="text" name="father_name", placeholder="father name">
+        <input type="text" name="mother_name", placeholder="mother name">
+        <input type="text" name="phone_number", placeholder="phone number">
+        <button type="submit" > Add </button>
+    </form>
+</div>
 </body>
 </html>
