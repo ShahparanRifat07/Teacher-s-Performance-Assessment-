@@ -11,6 +11,7 @@
     <form action="{% url 'add-student' %}" method="POST">
         {% csrf_token %}
         <input name="student_id" type="text" placeholder="student_id">
+        <input name="level" type="text" placeholder="Level">
         <input name="first_name" type="text" placeholder="first_name">
         <input name="last_name" type="text" placeholder="last_name">
         <input name="email" type="text" placeholder="email">
