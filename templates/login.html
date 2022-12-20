@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher's Performance Evaluation</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+      integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .contain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background-color: #f5f5f5;
+      }
+      .main-card {
+        display: flex;
+        /* justify-content: space-evenly; */
+        width: 50vw;
+        height: 50vh;
+        /* border: 1px solid red; */
+        background-color: white;
+      }
+      .main-card > .card1 {
+        /* border: 1px solid red; */
+        display: flex;
+        align-items: center;
+        width: 60%;
+        padding: 10px;
+        background-color: rgb(88, 41, 187);
+      }
+      .main-card > .card1 h1{
+        font-weight: bolder;
+        font-size: 5em;
+      }
+
+      .main-card > .card2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 40%;
+      }
+      .main-card > .card2  form{
+        width: 100%;
+      }
+      .login-button{
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contain">
+      <div class="main-card">
+        <div class="card1">
+            <h1>Teacher's Performance Evaluation</h1>
+        </div>
+        <div class="card2">
+          <form class="ui form" method="POST" action="{% url 'signin' %}">
+            {% csrf_token %}
+            <div class="field">
+              <label>Username</label>
+              <input type="text" name="username" placeholder="Username" />
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <input type="password" name="password" placeholder="Password" />
+            </div>
+            <button class="ui button violet login-button" type="submit">Log in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"
+      integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

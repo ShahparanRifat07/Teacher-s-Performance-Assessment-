@@ -15,6 +15,7 @@ class Position(models.Model):
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='student')
     student_id = models.CharField(max_length=32)
+    level = models.CharField(max_length=16, blank=True, null=True)
     enroll_courses = models.ManyToManyField(Class)
     father_name = models.CharField(max_length=128, null=True, blank=True)
     mother_name = models.CharField(max_length=128, null=True, blank=True)
@@ -54,7 +55,6 @@ class Teacher(models.Model):
     @property
     def email(self):
         return self._email
-
 
     def __str__(self):
         return self.user.first_name + " " + self.user.last_name + " " + self.teacher_id
